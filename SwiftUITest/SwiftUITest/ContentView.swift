@@ -10,7 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack (alignment: .leading) {//垂直组件
+            Text("圆明园").font(.title)
+            HStack {//水平组件
+                Text("皇家园林").font(.subheadline)
+                Spacer()
+                Text("北京").font(.subheadline)
+            }
+        }.padding()//容器留白
+            
     }
 }
 
