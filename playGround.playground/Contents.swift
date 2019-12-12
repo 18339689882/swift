@@ -32,23 +32,23 @@ import UIKit
 //print(error)
 //error.errorMsg = 3 //报错
 
-//var error:(errorCode:Int, errorMsg:Any) = (errorCode: 1,errorMsg: "无权限")
-//error.errorCode = 2
-//error.errorMsg = 3 //不会报错
-//print(error)
+var error:(errorCode:Int, errorMsg:Any) = (errorCode: 1,errorMsg: "无权限")
+error.errorCode = 2
+error.errorMsg = 3 //不会报错
+print(error)
 
 //元组的分解
-//let error = (1, "没有权限")
-//let (errorCode, errorMsg) = error
-//print(errorCode,errorMsg)
+let error1 = (1, "没有权限")
+let (errorCode, errorMsg) = error
+print(errorCode,errorMsg)
 
 //元组作为函数的返回值
-//func writeFile(content:String) ->(errorCode:Int, errorMsg: String){
-//    return(1, "没有权限")
-//}
-//
-//let error = writeFile(content: "")
-//print(error)
+func writeFile(content:String) ->(errorCode:Int, errorMsg: String){
+    return(1, "没有权限")
+}
+
+let error2 = writeFile(content: "")
+print(error)
 //
 //// Optional
 //var str: String? = "abc"
