@@ -32,39 +32,88 @@ import UIKit
 //print(error)
 //error.errorMsg = 3 //报错
 
-var error:(errorCode:Int, errorMsg:Any) = (errorCode: 1,errorMsg: "无权限")
-error.errorCode = 2
-error.errorMsg = 3 //不会报错
-print(error)
-
-//元组的分解
-let error1 = (1, "没有权限")
-let (errorCode, errorMsg) = error
-print(errorCode,errorMsg)
-
-//元组作为函数的返回值
-func writeFile(content:String) ->(errorCode:Int, errorMsg: String){
-    return(1, "没有权限")
-}
-
-let error2 = writeFile(content: "")
-print(error)
+//var error:(errorCode:Int, errorMsg:Any) = (errorCode: 1,errorMsg: "无权限")
+//error.errorCode = 2
+//error.errorMsg = 3 //不会报错
+//print(error)
 //
-//// Optional
-//var str: String? = "abc"
+////元组的分解
+//let error1 = (1, "没有权限")
+//let (errorCode, errorMsg) = error
+//print(errorCode,errorMsg)
+//
+////元组作为函数的返回值
+//func writeFile(content:String) ->(errorCode:Int, errorMsg: String){
+//    return(1, "没有权限")
+//}
+//
+//let error2 = writeFile(content: "")
+//print(error)
+////
+////// Optional
+////var str: String? = "abc"
+//
+//let emptyStr = ""
+//if emptyStr.isEmpty{
+//    print("empty")
+//}
+//
+//let numbers = """
+//    1
+//    2
+//        3
+//    4
+//    5
+//    """
+//print(numbers)
 
-let emptyStr = ""
-if emptyStr.isEmpty{
-    print("empty")
-}
 
-let numbers = """
-    1
-    2
-        3
-    4
-    5
-    """
-print(numbers)
+//let i = 1
+//if i == 1 {
+//    print(i)
+//}
+////MARK: 初始化字符串
+////字面量 推算
+//var emptyString = "some string"
+////初始化器语法；
+//var anotherStr = String();
+//if anotherStr .isEmpty {
+//    print("empsyString");
+//}
 
+//
+//var welcome = "hello"
+//var welcome1 = welcome
+//welcome1 += "word"
+//
+//print(welcome == welcome1)
+//
+//var string1 = "我是"
+//var string2 = "中国人"
+//let str = string1 + string2
+////print(str)
 
+//var welcome = "hello"
+////字符串的索引
+//welcome.insert("!", at: welcome.endIndex)//插入字符串！
+//welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))//插入字符串在！和 hello之间
+//welcome.remove(at: welcome.index(before: welcome.endIndex))//移除！
+//
+//let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+//welcome.removeSubrange(range)
+//print(welcome)//移除固定范围字符串
+
+//字符串比较
+let welcome = "hello, world"
+let index = welcome.firstIndex(of: ",") ?? welcome.endIndex //不存在就去最后一位
+let subString = welcome[..<index] //区间运算符
+print(subString)
+
+let newString = String(subString)
+print(newString)
+
+let welcomt1 = "hello"
+print(welcome == welcomt1)
+print(welcome.hasPrefix("hello"))//取前缀
+print(welcome.hasSuffix("world"))//取后缀
+print(welcomt1.hasSuffix("world"))//取后缀
