@@ -104,16 +104,58 @@ import UIKit
 //print(welcome)//移除固定范围字符串
 
 //字符串比较
-let welcome = "hello, world"
-let index = welcome.firstIndex(of: ",") ?? welcome.endIndex //不存在就去最后一位
-let subString = welcome[..<index] //区间运算符
-print(subString)
+//let welcome = "hello, world"
+//let index = welcome.firstIndex(of: ",") ?? welcome.endIndex //不存在就去最后一位
+//let subString = welcome[..<index] //区间运算符
+//print(subString)
+//
+//let newString = String(subString)
+//print(newString)
+//
+//let welcomt1 = "hello"
+//print(welcome == welcomt1)
+//print(welcome.hasPrefix("hello"))//取前缀
+//print(welcome.hasSuffix("world"))//取后缀
+//print(welcomt1.hasSuffix("world"))//取后缀
 
-let newString = String(subString)
-print(newString)
+//
+//var num1: UInt8 = 251
+//var num2 = num1 &+ 20
+//print(num2)
 
-let welcomt1 = "hello"
-print(welcome == welcomt1)
-print(welcome.hasPrefix("hello"))//取前缀
-print(welcome.hasSuffix("world"))//取后缀
-print(welcomt1.hasSuffix("world"))//取后缀
+//var num1: UInt8 = 0
+//var num2 = num1 &- 1
+//print(num2)
+
+//-128 ~ 127
+//var num1: Int8 = -128
+//var num2 = num1 &- 1
+//print(num2) // 127
+
+//合并空值运算符
+//let a:Int? = nil //可选值
+//let b = 8
+//print(a ?? b)
+
+//隐式展开
+//let str:String! = "abc"
+//let count = str.count
+//print(count)
+
+//可选链
+//let str:String? = "abc"
+//let scount = str?.count
+//if scount != nil{
+//    let lastIndex = scount! - 1
+//    print(lastIndex)
+//}
+
+func getNumber() -> Int{
+    print("aaa")
+    return 8
+}
+
+let a: Int? = nil
+let b = "abc"
+print(a ?? getNumber())
+
