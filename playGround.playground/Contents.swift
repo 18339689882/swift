@@ -150,12 +150,126 @@ import UIKit
 //    print(lastIndex)
 //}
 
-func getNumber() -> Int{
-    print("aaa")
-    return 8
+//func getNumber() -> Int{
+//    print("aaa")
+//    return 8
+//}
+//
+//let a: Int? = nil
+//let b = "abc"
+//print(a ?? getNumber())
+
+// 位运算
+let number :Int8 = -8
+//print(~number)
+//print(number & 0)
+//print(number | 0)
+//print(number ^ 3)
+//print(number << 1)
+//print(number >> 1)
+
+
+//异或算法1
+//var a = 10
+//var b = 8
+//
+//a = a ^ b
+//
+//b = a ^ b
+//a = a ^ b
+//
+//func countOffones (num:UInt) -> UInt{
+//    var count:UInt = 0
+//    var temp = num
+//    while temp != 0 {
+//        count += (temp & 1)
+//        temp = temp >> 1
+//    }
+//    return count
+//}
+//
+//countOffones(num: 0x111010000)
+
+//// 定义中缀运算级
+//infix operator += : AdditionPrecedence
+//infix operator *^ :MyPrecedence
+//// 定义优先级
+//precedencegroup MyPrecedence{
+//    associativity:left
+//    lowerThan:AdditionPrecedence
+//}
+//// 定义结构体
+//struct Vector2D{
+//    var x = 0.0
+//    var y = 0.0
+//}
+//// 自定义运算符
+//extension Vector2D {
+//    static func *^ (left: Vector2D, right: Vector2D) -> Vector2D {
+//        return Vector2D(x: left.x * right.x, y: left.y * right.y)
+//    }
+//}
+//extension Vector2D {
+//    static func += (left: Vector2D, right: Vector2D) -> Vector2D {
+//        return Vector2D(x: left.x + right.x, y: left.y + right.y)
+//    }
+//}
+//// 计算结果
+//let first = Vector2D(x: 10, y: 8)
+//let second = Vector2D(x: 2, y: 2)
+//let third = Vector2D(x: 2, y: 2)
+//let result = first += second *^ third
+
+let numverOfLegs = ["one":8,"tow":7,"three":6]
+
+//for (a, b) in numverOfLegs {
+//    print("\(a) to \(b)")
+//}
+
+//for t in numverOfLegs {
+//    print("\(t.0) to \(t.1)")
+//}
+
+
+//let base = 3
+//let power = 5
+//var result = 1
+//for _ in 1...3 {
+//    result *= base
+//    print("\(base) to \(power) is \(result)")
+//}
+//
+//let minuteInterval = 5
+//for tickMark in stride(from: 0, to: 50, by: minuteInterval) {//不包含50
+//    print(tickMark)
+//}
+//for tickMark in stride(from: 0, through: 50, by: minuteInterval) {//包含50
+//    print(tickMark)
+//}
+
+let someCharacter:Character = "z"
+switch someCharacter {
+case "a":
+    print("")
+case "b":
+    print("b")
+default:
+    print("z")
 }
 
-let a: Int? = nil
-let b = "abc"
-print(a ?? getNumber())
+let somePoint = (1, 1)
+
+switch somePoint {
+case let (x, y) where x == -y :
+    print("\(x)")
+case let (x, y) where x > y :
+    print("\(y)")
+case let (x, y) where x == y :
+    print("\(x) and \(y)")
+case let(x, y):
+    print("\(x) and \(y)")
+}
+
+
+
 
