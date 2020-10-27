@@ -247,29 +247,73 @@ let numverOfLegs = ["one":8,"tow":7,"three":6]
 //    print(tickMark)
 //}
 
-let someCharacter:Character = "z"
-switch someCharacter {
-case "a":
-    print("")
-case "b":
-    print("b")
-default:
-    print("z")
-}
+//let someCharacter:Character = "z"
+//switch someCharacter {
+//case "a":
+//    print("")
+//case "b":
+//    print("b")
+//default:
+//    print("z")
+//}
+//
+//let somePoint = (1, 1)
+//
+//switch somePoint {
+//case let (x, y) where x == -y :
+//    print("\(x)")
+//case let (x, y) where x > y :
+//    print("\(y)")
+//case let (x, y) where x == y :
+//    print("\(x) and \(y)")
+//case let(x, y):
+//    print("\(x) and \(y)")
+//}
+//
+//if #available(iOS 10, mascOS 10.12 *){
+//
+//}
 
-let somePoint = (1, 1)
+//let array = [1, 2, 3]
+//let arr:[Int] = []
+//// 初始化器
+//var arr1 = [Int]()
+//var arr2 = Array<String>()
+//
+//// 初始化器参数
+//let five = Array(repeating: "a", count: 5)
+//print(five);
+//
+//let four = Array(arrayLiteral: 1...3)
+//print(four)
+//
+//let numbers = [Int](0...7)
+//print(numbers)
+//
+//let persons = ["zhangsan":24, "lisi":12]
+//let names = [String](persons.keys)
+//print(names)
 
-switch somePoint {
-case let (x, y) where x == -y :
-    print("\(x)")
-case let (x, y) where x > y :
-    print("\(y)")
-case let (x, y) where x == y :
-    print("\(x) and \(y)")
-case let(x, y):
-    print("\(x) and \(y)")
-}
+
+//let arr = [Int](0...8)
+//for (index, num) in arr.enumerated() {
+//    print("***\(index)")
+//    print(num * 10)
+//}
 
 
+//var numIterator = arr.makeIterator()
+//while let num = numIterator.next(){
+//    print(num * 10)
+//}
+//let arr = [Int](0...8)
+//print(arr.startIndex)// 0
+//print(arr.endIndex)// 9
+//
+//print(arr.indices)// 0..<9
+//
+//print(arr.makeIterator())
 
-
+var array = [10, 20, 30, 50, 80]
+print(array.allSatisfy({$0 > 10}))// false
+print(array.allSatisfy({$0 >= 10}))// ture
