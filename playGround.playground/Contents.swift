@@ -314,6 +314,57 @@ let numverOfLegs = ["one":8,"tow":7,"three":6]
 //
 //print(arr.makeIterator())
 
-var array = [10, 20, 30, 50, 80]
-print(array.allSatisfy({$0 > 10}))// false
-print(array.allSatisfy({$0 >= 10}))// ture
+//print(array.allSatisfy({$0 > 10}))// false
+//print(array.allSatisfy({$0 >= 10}))// ture
+
+//print(array.first)
+//print(array.last)
+//print(array.first(where: {$0 > 20}))
+//print(array.last(where: {$0 > 40}))
+//
+//print(array.first ?? 0)
+//print(array.last ?? 00)
+//print(array.first(where: {$0 > 20}) ?? 0)
+//print(array.last(where: {$0 > 240}) ?? 0)
+//var array = [10, 20, 30, 50, 80]
+
+//print(array.firstIndex(of: 80))
+//print(array.lastIndex(of: 30))
+//print(array.firstIndex(where:{$0 >= 80}))
+//print(array.lastIndex(where:{$0 > 20}))
+//print(array.max())
+//print(array.min())
+
+
+//var array = [(45, "message1"),(23, "message2"),(70, "message3")]
+//print(array.min{a, b in a.0 < b.0})
+//print(array.max{a, b in a.0 < b.0})
+var array = [Int](0...2)
+
+//array.append(20)
+//print(array)
+//array.append(contentsOf: 100...101)
+//print(array)
+
+//array.insert(0, at: 1)
+//print(array)
+//array.insert(contentsOf: 0...1, at: 1)
+//print(array)
+
+//chars.insert(contentsOf: "hello", at: 0)
+//print(chars)
+
+//let removedChars = chars.remove(at: 0)
+//print(removedChars)
+//let removedChar = chars.removeFirst()
+//print(removedChar)
+var chars:[Character] = ["a", "b", "c","d"]
+
+//chars.removeFirst(2)// ["c", "d"]
+//chars.removeLast(2) // ["a", "b"]
+
+chars.removeSubrange(1...3) //["a"]
+chars.removeAll() //[]
+chars.removeAll(keepingCapacity: true)// []
+
+
