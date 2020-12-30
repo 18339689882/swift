@@ -367,4 +367,22 @@ chars.removeSubrange(1...3) //["a"]
 chars.removeAll() //[]
 chars.removeAll(keepingCapacity: true)// []
 
+func textGuard (num:Int) {
+    guard num > 0 else {
+        return
+    }
+    print("111")
+}
+
+let i = 1
+if i == 1 {
+    print("111");
+    textGuard(num: 1)
+}else if(i == 2){
+    print("else");
+}
+
+
+
+
 
