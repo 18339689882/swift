@@ -382,7 +382,97 @@ if i == 1 {
     print("else");
 }
 
+// MARK:
+// MARK:枚举example
+// MARK:
 
+enum someEnumeration{
+    // 枚举定义在这里
+    // 枚举的成员值
+    case north
+    case south
+    case east
+    case west
+}
+enum someEnumeration1{
+    case north, south, east, west
+}
 
+var directionEnmu = someEnumeration.north
+directionEnmu = .west
 
+// switch 匹配枚举值
+//MARK 1，枚举所有成员
+switch directionEnmu {
+case .north:
+    print("这是枚举1")
+case.east:
+    print("这是枚举2")
+case.south:
+print("这是枚举3")
+case.west:
+print("这是枚举4")
+}
+//MARK// 2， 枚举部分成员 ，使用default
+switch directionEnmu {
+case .north:
+    print("这是枚举1")
+case.east:
+    print("这是枚举2")
+default:
+print("other")
+}
+
+//MARK// 枚举成员的遍历
+enum beverage: CaseIterable{
+    case coffee, tea, juice
+}
+
+let beverageNum = beverage.allCases.count
+print("\(beverageNum) beverageNum.count")
+
+for beverage in beverage.allCases {
+    print(beverage)
+}
+
+//MARK// 关联值
+
+enum connectEnum{
+    case upc(Int, Int, Int, Int)
+    case qrCode(String)
+}
+
+var connect = connectEnum.upc(10, 10, 10, 19)
+connect = .qrCode("qrcode")
+print(connect)
+
+switch connect {
+case .upc(let number1, let number2, let number3, let number4):
+    print("\(number1),\(number2) annd")
+case.qrCode(let string):
+print("\(string)")
+}
+
+//MARK// 省略形式
+switch connect {
+case let .upc(number1, number2, number3, number4):
+    print("\(number1),\(number2) annd")
+case var .qrCode(string):
+print("\(string)")
+}
+
+//MARK// rawValue访问 原始值
+enum Plant:Int{
+    case mercury = 1,venus,earth,mars,jupiter,saturn
+}
+var venus = Plant.venus.rawValue
+
+print(venus)// 2
+
+//MARK//通过原始值找值
+let possiblePlant = Plant(rawValue: 3)// Planet?
+let possiblePlant2 = Plant(rawValue: 10)// nil
+print("\(String(describing: possiblePlant)),\(String(describing: possiblePlant2 ?? nil))")
+
+//MARK// 递归枚举 关键字：indirect
 
