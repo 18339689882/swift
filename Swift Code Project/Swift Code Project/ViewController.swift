@@ -87,6 +87,10 @@ class ViewController: UIViewController {
         print(customersInLine.count)
         // 打印出“5”
 
+        
+        
+        
+        
         let customerProvider = { customersInLine.remove(at: 0) }
         print(customersInLine.count)
         // 打印出“5”
