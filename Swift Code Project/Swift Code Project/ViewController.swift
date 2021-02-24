@@ -96,8 +96,6 @@ class ViewController: UIViewController {
         print(customersInLine.count)
         // 打印出“4”
         
-        
-        
     }
 }
 
