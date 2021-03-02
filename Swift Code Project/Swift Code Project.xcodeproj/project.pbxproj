@@ -13,6 +13,7 @@
 		046C89D5259D5F3F0011B755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046C89D3259D5F3F0011B755 /* Main.storyboard */; };
 		046C89D7259D5F420011B755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046C89D6259D5F420011B755 /* Assets.xcassets */; };
 		046C89DA259D5F420011B755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046C89D8259D5F420011B755 /* LaunchScreen.storyboard */; };
+		04B92E4D25EE41EB001F2411 /* VideoViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B92E4C25EE41EB001F2411 /* VideoViewcontroller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		046C89D6259D5F420011B755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		046C89D9259D5F420011B755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		046C89DB259D5F420011B755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B92E4C25EE41EB001F2411 /* VideoViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewcontroller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				046C89CD259D5F3F0011B755 /* AppDelegate.swift */,
 				046C89CF259D5F3F0011B755 /* SceneDelegate.swift */,
 				046C89D1259D5F3F0011B755 /* ViewController.swift */,
+				04B92E4C25EE41EB001F2411 /* VideoViewcontroller.swift */,
 				046C89D3259D5F3F0011B755 /* Main.storyboard */,
 				046C89D6259D5F420011B755 /* Assets.xcassets */,
 				046C89D8259D5F420011B755 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				046C89D2259D5F3F0011B755 /* ViewController.swift in Sources */,
 				046C89CE259D5F3F0011B755 /* AppDelegate.swift in Sources */,
+				04B92E4D25EE41EB001F2411 /* VideoViewcontroller.swift in Sources */,
 				046C89D0259D5F3F0011B755 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

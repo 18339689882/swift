@@ -474,5 +474,24 @@ let possiblePlant = Plant(rawValue: 3)// Planet?
 let possiblePlant2 = Plant(rawValue: 10)// nil
 print("\(String(describing: possiblePlant)),\(String(describing: possiblePlant2 ?? nil))")
 
-//MARK// 递归枚举 关键字：indirect
+//MARK 递归枚举 关键字：indirect
+// MARK:
+// MARK:swift 高阶函数
+// MARK:
+let numbers = [1,2,3,4,5,10]
+print(numbers.map{$0 * 10})
+print(numbers.filter{ $0 > 4})
+print(numbers.reduce(100){$0 + $1})// 100 + 1 + 2 + 3...
+
+let arrNumbers = [[1,2,3],[4,5,6],[7,8,9]]
+
+print(arrNumbers.flatMap{$0.map{$0 * 10}}) // 对于元素是集合的集合，可以得到单级的集合
+
+let names = ["aa","bb",nil,"cc"]// 过滤空值。
+print(names.compactMap{$0})
+print(names.compactMap{$0?.count})
+// MARK:
+// MARK:函数式编程
+// MARK:
+
 
