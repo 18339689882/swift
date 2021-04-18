@@ -56,6 +56,13 @@ class ViewController: UIViewController {
             print("\(text ?? "")")
         }).disposed(by: disposeBag)
         
+        
+        // scrollView 的滚动
+        let scrollView = UIScrollView()
+        scrollView.contentSize = CGSize.init(width: self.view.frame.size.width, height: UIScreen.main.bounds.size.height)
+        scrollView.rx.contentOffset.subscribe(onNext: { (point) in
+            print(point.x)
+        }).disposed(by: disposeBag)
     }
 }
 
