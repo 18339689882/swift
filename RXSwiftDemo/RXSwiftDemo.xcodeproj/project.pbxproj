@@ -16,6 +16,7 @@
 		0499375A262C2D4E00DCDE52 /* PeopleViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04993759262C2D4E00DCDE52 /* PeopleViewcontroller.swift */; };
 		0499375C262C2D6700DCDE52 /* PeopleVieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499375B262C2D6700DCDE52 /* PeopleVieModel.swift */; };
 		0499375E262C2D6F00DCDE52 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499375D262C2D6F00DCDE52 /* PeopleModel.swift */; };
+		04993761262C886800DCDE52 /* ObserveVieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04993760262C886800DCDE52 /* ObserveVieController.swift */; };
 		CE3FC50753CC006F6A49FA90 /* Pods_RXSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA81ABC53DA6D21AFE15135 /* Pods_RXSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		04993759262C2D4E00DCDE52 /* PeopleViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewcontroller.swift; sourceTree = "<group>"; };
 		0499375B262C2D6700DCDE52 /* PeopleVieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleVieModel.swift; sourceTree = "<group>"; };
 		0499375D262C2D6F00DCDE52 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
+		04993760262C886800DCDE52 /* ObserveVieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveVieController.swift; sourceTree = "<group>"; };
 		1C7B596AC4E0C6DE03BBD9E7 /* Pods-RXSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RXSwiftDemo/Pods-RXSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		4D17E1ADB17049D7429FECE6 /* Pods-RXSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RXSwiftDemo/Pods-RXSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DBA81ABC53DA6D21AFE15135 /* Pods_RXSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RXSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 		0481F040262C275100FAD636 /* RXSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0499375F262C882900DCDE52 /* Observe */,
 				04993758262C2D2B00DCDE52 /* PeopleModule */,
 				0481F041262C275100FAD636 /* AppDelegate.swift */,
 				0481F043262C275100FAD636 /* SceneDelegate.swift */,
@@ -89,6 +92,14 @@
 				0499375D262C2D6F00DCDE52 /* PeopleModel.swift */,
 			);
 			path = PeopleModule;
+			sourceTree = "<group>";
+		};
+		0499375F262C882900DCDE52 /* Observe */ = {
+			isa = PBXGroup;
+			children = (
+				04993760262C886800DCDE52 /* ObserveVieController.swift */,
+			);
+			path = Observe;
 			sourceTree = "<group>";
 		};
 		1A25CAE4F2158C45969A933C /* Pods */ = {
@@ -238,6 +249,7 @@
 				0481F042262C275100FAD636 /* AppDelegate.swift in Sources */,
 				0499375E262C2D6F00DCDE52 /* PeopleModel.swift in Sources */,
 				0481F044262C275100FAD636 /* SceneDelegate.swift in Sources */,
+				04993761262C886800DCDE52 /* ObserveVieController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
