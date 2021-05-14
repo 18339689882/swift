@@ -9,9 +9,11 @@
 import UIKit
 import RxSwift
 import RxCocoa
+
 class ViewController: UIViewController {
     // MARK:// RXCocoa swift 常用控件的一些扩展
-    
+    // 有类型的数组
+    fileprivate lazy var heros : [ViewController] = [ViewController]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,7 +33,7 @@ class ViewController: UIViewController {
         }).disposed(by: disposeBag)
         // warning todo !!
         textField.rx.text.subscribe { (event) in
-            print(event.element!!)
+            print(event.element as Any)
         }.disposed(by: disposeBag)
         
         // textField 的值绑定到label
@@ -63,9 +65,50 @@ class ViewController: UIViewController {
         scrollView.rx.contentOffset.subscribe(onNext: { (point) in
             print(point.x)
         }).disposed(by: disposeBag)
+        /**
+         
+         */
+        print("------------------------------")
+        // MARK:
+        // MARK:资源释放
+        // MARK:
+        let subject = BehaviorSubject(value: "1")
+        // _ = 消除警告，忽略返回值
+        /**
+         此对象不会随便销毁
+         销毁方式：
+         1.   .dispose()直接销毁  2不会打印，
+         2.   .disposed(by: disposeBag) disposeBag 对象销毁的时候销毁。
+            可以使用fileprivate，跟随文件这个类的销毁，才销毁。
+         */
+        
+        subject.subscribe { (event: Event<String>) in
+            print(event)
+        }.disposed(by: disposeBag)
+        subject.onNext("2")
+        
+        // MARK:UIBindingObserver
+        
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.present(PeopleViewcontroller.init(), animated: true, completion: nil)
     }
 }
 
+extension ViewController{
+    fileprivate func createTableView(){
+        // MARK:UItableView 使用
+        let tableView = UITableView.init(frame: CGRect.zero, style: .plain)
+        /**
+         1， 设置代理
+         2， 新数据，就需要reloadData
+         */
+        // rxSwift tableView
+        /**
+         
+         */
+    }
+}
 
 extension ViewController : UITextFieldDelegate{
 //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

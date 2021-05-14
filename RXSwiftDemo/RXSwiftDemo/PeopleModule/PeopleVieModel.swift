@@ -20,4 +20,14 @@ struct PeopleListModel {
 
 class PeopleVieModel: NSObject {
     
+    // variable 弃用了
+    
+    var dataObservable: BehaviorSubject<[People]> = {
+        var datas: [People] = [People]()
+        for data in 1...3{
+            datas.append(People(name: "111", age: 11))
+        }
+        return BehaviorSubject(value: datas)
+    }()
+    
 }
