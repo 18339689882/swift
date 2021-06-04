@@ -11,6 +11,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 闭包学习
+        learnSwiftBlockAction()
+        // async/await
+        asyncAwaitLearnAction()
+    }
+}
+
+extension ViewController{
+    //_____________________________________________________闭包_______________________________________________________________
+    func learnSwiftBlockAction() {
         //MARK:闭包
         let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
         
@@ -86,16 +96,23 @@ class ViewController: UIViewController {
         var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
         print(customersInLine.count)
         // 打印出“5”
-
+        
         let customerProvider = { customersInLine.remove(at: 0) }
         print(customersInLine.count)
         // 打印出“5”
-
+        
         print("Now serving \(customerProvider())!")
         // 打印出“Now serving Chris!”
         print(customersInLine.count)
         // 打印出“4”
+    }
+    //_____________________________________________________async/await_______________________________________________________________
+    fileprivate func asyncAwaitLearnAction() {
         
+    }
+    
+    private func raiseHand() throws -> Bool {
+        return true
     }
 }
 
