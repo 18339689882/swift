@@ -14,12 +14,11 @@ class ViewController: UIViewController {
     // MARK:// RXCocoa swift 常用控件的一些扩展
     // 有类型的数组
     fileprivate lazy var heros : [ViewController] = [ViewController]()
+    let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        let disposeBag = DisposeBag()
-        
         let button = UIButton()
         button.rx.tap.subscribe(onNext: { (button) in
             print("按钮点击了")
@@ -88,11 +87,29 @@ class ViewController: UIViewController {
         subject.onNext("2")
         
         // MARK:UIBindingObserver
-        
+        addTouchButton()
+        self.navigationController?.pushViewController(RxSwiftLearningVc(), animated:true)
     }
+    
+    fileprivate func addTouchButton() {
+        view.addSubview(touchButton)
+        touchButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100);
+        touchButton.backgroundColor = .cyan
+        touchButton.setTitle("rxSwift learning", for: .normal)
+        touchButton.rx.tap.subscribe(onNext: { (button) in
+            self.navigationController?.pushViewController(RxSwiftLearningVc(), animated:true)
+        }).disposed(by: disposeBag)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.present(PeopleViewcontroller.init(), animated: true, completion: nil)
+        // self.present(PeopleViewcontroller.init(), animated: true, completion: nil)
     }
+    
+    private lazy var touchButton: UIButton = {
+        let button = UIButton(type: .custom)
+        return button
+    }()
+    
 }
 
 extension ViewController{

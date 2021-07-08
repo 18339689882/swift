@@ -13,6 +13,7 @@
 		0481F049262C275100FAD636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0481F047262C275100FAD636 /* Main.storyboard */; };
 		0481F04B262C275500FAD636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0481F04A262C275500FAD636 /* Assets.xcassets */; };
 		0481F04E262C275500FAD636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0481F04C262C275500FAD636 /* LaunchScreen.storyboard */; };
+		0482592A2696AA07007F7416 /* RxSwiftLearningVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048259292696AA07007F7416 /* RxSwiftLearningVc.swift */; };
 		0499375A262C2D4E00DCDE52 /* PeopleViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04993759262C2D4E00DCDE52 /* PeopleViewcontroller.swift */; };
 		0499375C262C2D6700DCDE52 /* PeopleVieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499375B262C2D6700DCDE52 /* PeopleVieModel.swift */; };
 		0499375E262C2D6F00DCDE52 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499375D262C2D6F00DCDE52 /* PeopleModel.swift */; };
@@ -28,6 +29,7 @@
 		0481F04A262C275500FAD636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0481F04D262C275500FAD636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0481F04F262C275500FAD636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		048259292696AA07007F7416 /* RxSwiftLearningVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftLearningVc.swift; sourceTree = "<group>"; };
 		04993759262C2D4E00DCDE52 /* PeopleViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewcontroller.swift; sourceTree = "<group>"; };
 		0499375B262C2D6700DCDE52 /* PeopleVieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleVieModel.swift; sourceTree = "<group>"; };
 		0499375D262C2D6F00DCDE52 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		0481F040262C275100FAD636 /* RXSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				048259282696A9F3007F7416 /* RxSwiftLearning */,
 				04993758262C2D2B00DCDE52 /* PeopleModule */,
 				0481F041262C275100FAD636 /* AppDelegate.swift */,
 				0481F043262C275100FAD636 /* SceneDelegate.swift */,
@@ -79,6 +82,14 @@
 				0481F04F262C275500FAD636 /* Info.plist */,
 			);
 			path = RXSwiftDemo;
+			sourceTree = "<group>";
+		};
+		048259282696A9F3007F7416 /* RxSwiftLearning */ = {
+			isa = PBXGroup;
+			children = (
+				048259292696AA07007F7416 /* RxSwiftLearningVc.swift */,
+			);
+			path = RxSwiftLearning;
 			sourceTree = "<group>";
 		};
 		04993758262C2D2B00DCDE52 /* PeopleModule */ = {
@@ -237,6 +248,7 @@
 				0499375A262C2D4E00DCDE52 /* PeopleViewcontroller.swift in Sources */,
 				0481F042262C275100FAD636 /* AppDelegate.swift in Sources */,
 				0499375E262C2D6F00DCDE52 /* PeopleModel.swift in Sources */,
+				0482592A2696AA07007F7416 /* RxSwiftLearningVc.swift in Sources */,
 				0481F044262C275100FAD636 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

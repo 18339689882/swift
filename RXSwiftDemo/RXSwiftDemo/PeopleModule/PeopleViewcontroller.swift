@@ -15,7 +15,7 @@ class PeopleViewcontroller: ViewController {
     
     let viewModel = PeopleVieModel()
     let peopleList = PeopleListModel()
-    let disposeBag = DisposeBag()
+    fileprivate lazy var disposeBag1 = DisposeBag()
     let peopleListTableView = UITableView.init(frame: CGRect(x: 15, y: 160, width: 200, height: 200), style: .plain)
     
     override func viewDidLoad() { 
@@ -28,15 +28,15 @@ class PeopleViewcontroller: ViewController {
         viewModel.dataObservable.bind(to: peopleListTableView.rx.items(cellIdentifier: "peopleTable")){ row, people, cell in
             cell.textLabel?.text = people.name
             cell.detailTextLabel?.text = "\(people.age)"
-        }.disposed(by: disposeBag)
+        }.disposed(by: disposeBag1)
         
         peopleListTableView.rx.modelSelected(People.self).subscribe(onNext: { (people :People) in
             print(people.name)
-        }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag1)
         
         peopleListTableView.rx.itemSelected.subscribe { (indexPath) in
             print(indexPath)
-        }.disposed(by: disposeBag)
+        }.disposed(by: disposeBag1)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
             viewModel.dataObservable.onNext([People(name: "hahah", age: 15)])
