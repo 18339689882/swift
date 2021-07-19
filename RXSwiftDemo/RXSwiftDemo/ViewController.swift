@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     fileprivate lazy var heros : [ViewController] = [ViewController]()
     let disposeBag = DisposeBag()
 
+    @objc dynamic var kvoNumber: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -88,7 +90,16 @@ class ViewController: UIViewController {
         
         // MARK:UIBindingObserver
         addTouchButton()
-        self.navigationController?.pushViewController(RxSwiftLearningVc(), animated:true)
+//        self.navigationController?.pushViewController(RxSwiftLearningVc(), animated:true)
+        kvoNumber = 3
+        KVOObserver()
+    }
+    
+    fileprivate func KVOObserver() {
+        self.rx.observeWeakly(Int.self, "kvoNumber").subscribe(onNext: {
+            print($0 ?? 0)
+        }).disposed(by: disposeBag)
+        kvoNumber = 1
     }
     
     fileprivate func addTouchButton() {
@@ -96,8 +107,12 @@ class ViewController: UIViewController {
         touchButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100);
         touchButton.backgroundColor = .cyan
         touchButton.setTitle("rxSwift learning", for: .normal)
-        touchButton.rx.tap.subscribe(onNext: { (button) in
-            self.navigationController?.pushViewController(RxSwiftLearningVc(), animated:true)
+        touchButton.rx.tap.subscribe(onNext: { [weak self] (button) in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.kvoNumber = 5
+            // strongSelf.navigationController?.pushViewController(RxSwiftLearningVc(), animated:true)
         }).disposed(by: disposeBag)
     }
     
