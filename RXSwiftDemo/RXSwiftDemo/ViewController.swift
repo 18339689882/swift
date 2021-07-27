@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         
         // MARK:UIBindingObserver
         addTouchButton()
-//        self.navigationController?.pushViewController(RxSwiftLearningVc(), animated:true)
+        self.navigationController?.pushViewController(RxSwiftLearningVc(), animated:true)
         kvoNumber = 3
         KVOObserver()
     }

@@ -46,9 +46,9 @@ class RxSwiftLearningVc: ViewController {
             return Disposables.create()
         }
         
-        create.subscribe(onDisposed: {
-            
-        }).disposed(by: disposeBagLearning)
+//        create.subscribe(onNext: {_ in
+//
+//        }).disposed(by: disposeBagLearning)
         
         let tasks = PublishSubject<String>()
         
@@ -206,7 +206,7 @@ class RxSwiftLearningVc: ViewController {
          // next(2map)
          // completed
          */
-        // MARK:🇨🇳 14. flatMap / flatMapLast 没有理解 ❓❓❓❓
+        // MARK:🇨🇳 14. flatMap / flatMapLast 没有理解 ❓❓❓❓ Swift 4.1 flatMap -> compactMap
         /**
          let flatMapSubject = PublishSubject<Observable<NSString>>.init()
          flatMapSubject.flatMap{
@@ -216,5 +216,36 @@ class RxSwiftLearningVc: ViewController {
          }).disposed(by: disposeBagLearning)
          flatMapSubject.onNext(Observable.of("1"))
          */
+        /// 一维数组
+        let numbers = [1, 2, 3, 4]
+        let numbers1 = numbers.map {
+            $0 + 1
+        }
+        let numbers2 = numbers.compactMap {
+            $0 + 1
+        }
+        print(numbers1)
+        print(numbers2)
+        // [2,3,4,5]
+        
+        // 二维数组
+        let numbersCompound = [[1,2,3],[4,5,6]];
+        var res = numbersCompound.map { $0.map{ $0 + 1 } }
+        // [[2,3,4], [5,6,7]]
+        var flatRes = numbersCompound.flatMap { $0.map{ $0 + 1 } }
+        // [2,3,4,5,6,7]
+        print(res)
+        print(flatRes)
+        // MARK: 降维。
+        let optionalArray: [String?] = ["AA", nil, "BB", "CC"]
+        let optionalFlatMapResult = optionalArray.compactMap{ $0 }
+        // ["AA", "BB", "CC"]
+        let optionalMapResult = optionalArray.map{ $0 }
+        // [Optional("AA"), nil, Optional("BB"), Optional("CC")]
+        print(optionalFlatMapResult)
+        print(optionalMapResult)
+        // MARK: 去nil， 解包。
+        
+
     }
 }
