@@ -107,9 +107,18 @@ extension ViewController{
         // 打印出“4”
     }
     //_____________________________________________________async/await_______________________________________________________________
-    //MARK:  认识 Swift 中的异步与并发
-    fileprivate func asyncAwaitLearnAction() {
+    //MARK:  认识 Swift 中的异步与并发 https://xiaozhuanlan.com/topic/8627905413
+    fileprivate func asyncAwaitLearnAction() throws {
         
+    }
+    
+    func fetchThumbnail(for id: String) async throws -> UIImage {
+        let request = thumbnailURLRequest(for: id)
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.badID }
+        let maybeImage = UIImage(data: data)
+        guard let thumbnail = await maybeImage?.thumbnail else { throw FetchError.badImage }
+        return thumbnail
     }
     
     private func raiseHand() throws -> Bool {
